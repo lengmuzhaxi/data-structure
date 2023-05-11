@@ -13,14 +13,14 @@ LTNode*BuyLTNode(LtDataType x)
 	newnode->prev = NULL;
 	return newnode;
 }
-LTNode *LTInit()//´´½¨
+LTNode *LTInit()//åˆ›å»º
 {
 	LTNode* phead = BuyLTNode(-1);
 	phead->prev = phead;
 	phead->next = phead;
 	return phead;
 }
-void LTPrint(LTNode* phead)//´òÓ¡
+void LTPrint(LTNode* phead)//æ‰“å°
 {
 	assert(phead);
 	printf("guard");
@@ -32,7 +32,7 @@ void LTPrint(LTNode* phead)//´òÓ¡
 	}
 	printf("\n");
 }
-void LTPushBack(LTNode* phead, LtDataType x)//Î²²å
+void LTPushBack(LTNode* phead, LtDataType x)//å°¾æ’
 {
 	assert(phead);
 	LTNode* tail = phead->prev;
@@ -42,7 +42,7 @@ void LTPushBack(LTNode* phead, LtDataType x)//Î²²å
 	newnode->next = phead;
 	phead->prev = newnode;
 }
-void LTPushFront(LTNode* phead, LtDataType x)//Í·²å
+void LTPushFront(LTNode* phead, LtDataType x)//å¤´æ’
 {
 	assert(phead);
 	LTNode* newnode = BuyLTNode(x);
@@ -51,7 +51,7 @@ void LTPushFront(LTNode* phead, LtDataType x)//Í·²å
 	phead->next = newnode;
 	newnode->prev = phead;
 }
-void LTPopBack(LTNode* phead)//Î²É¾
+void LTPopBack(LTNode* phead)//å°¾åˆ 
 {
 	assert(phead);
 	LTNode* tail = phead->prev;
@@ -60,14 +60,14 @@ void LTPopBack(LTNode* phead)//Î²É¾
 	tailprev->next = phead;
 	phead->prev = tailprev;
 }
-void LTPopFront(LTNode* phead)//Í·É¾
+void LTPopFront(LTNode* phead)//å¤´åˆ 
 {
 	LTNode* next = phead->next;
 	phead->next = next->next; 
 	next->next->prev = phead;
 	free(next);
 }
-LTNode* LTFind(LTNode* phead, LtDataType x)//²éÕÒ
+LTNode* LTFind(LTNode* phead, LtDataType x)//æŸ¥æ‰¾
 {
 	assert(phead);
 	LTNode* cur = phead->next;
@@ -81,7 +81,7 @@ LTNode* LTFind(LTNode* phead, LtDataType x)//²éÕÒ
 	}
 	return NULL;
 }
-void LTInsert(LTNode* pos, LtDataType x)//²éÕÒ(posÖ®Ç°²åÈë)
+void LTInsert(LTNode* pos, LtDataType x)//æŸ¥æ‰¾(posä¹‹å‰æ’å…¥)
 {
 	assert(pos);
 	LTNode* prev = pos->prev;
@@ -91,7 +91,7 @@ void LTInsert(LTNode* pos, LtDataType x)//²éÕÒ(posÖ®Ç°²åÈë)
 	newnode->next = pos; 
 	pos->prev = newnode;
 }
-void LTErase(LTNode* pos)//É¾³ý(posÎ»ÖÃµÄÖµ)
+void LTErase(LTNode* pos)//åˆ é™¤(posä½ç½®çš„å€¼)
 {
 	LTNode* posPrev = pos->prev;
 	LTNode* posNext = pos->next;
@@ -102,7 +102,7 @@ void LTErase(LTNode* pos)//É¾³ý(posÎ»ÖÃµÄÖµ)
 void LTDestroy(LTNode* phead)
 {
 	assert(phead);
-	LTNode* cur = cur->next;
+	LTNode* cur = phead->next;
 	while (cur != phead)
 	{
 		LTNode* next = cur->next;
