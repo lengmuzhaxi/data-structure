@@ -105,7 +105,7 @@ void LTDestroy(LTNode* phead)
 	LTNode* cur = phead->next;
 	while (cur != phead)
 	{
-		LTNode* next = cur->next;
+		LTNode* next = phead->next;
 		free(cur);
 		cur = next;
 	}
