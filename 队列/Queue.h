@@ -15,11 +15,11 @@ typedef struct Queue
 	QNode* ptail;
 	int size;
 }Queue;
-void QueueInit(Queue*pq);//创建队列
-void QueueDestroy(Queue* pq);//销毁队列
-void QueuePush(Queue* pq, QDatatype x);// 队尾入队列
+void QueueInit(Queue*pq);//麓麓陆篓露脫脕脨
+void QueueDestroy(Queue* pq);//脧煤禄脵露脫脕脨
+void QueuePush(Queue* pq, QDatatype x);// 露脫脦虏脠毛露脫脕脨
 void QueuePop(Queue* pq);
 QueueFront(Queue* pq);
 QueueBack(Queue* pq);
-int QueueEmpty(Queue* pq);
+bool QueueEmpty(Queue* pq);
 int QueueSize(Queue* pq);
