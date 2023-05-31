@@ -1,14 +1,14 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include"Sort.h"
-void PrintArray(int* a, int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		printf("%d ", a[i]);
-	}
-	printf("\n");
-}
-void InsertSort(int* a, int n)
+//void PrintArray(int* a, int n)
+//{
+//	for (int i = 0; i < n; i++)
+//	{
+//		printf("%d ", a[i]);
+//	}
+//	printf("\n");
+//}
+void InsertSort(int* a, int n)//Ö±½Ó²åÈëÅÅÐò
 {
 	for (int i = 1; i < n; ++i)
 	{
@@ -17,7 +17,7 @@ void InsertSort(int* a, int n)
 
 		while (end >= 0)
 		{
-			if (a[end] > tmp)
+			if (a[end] < tmp)
 			{
 				a[end + 1] = a[end];
 				--end;
